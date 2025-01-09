@@ -10,8 +10,4 @@ class Solution(object):
                 lst.pop()
             else:
                 lst.append(i)
-        return "".join(lst)
-
-s = "abbaca"
-obj=Solution()
-print(obj.removeDuplicates(s))   
+        return "".join(lst)  
