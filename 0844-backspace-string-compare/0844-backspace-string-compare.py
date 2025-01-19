@@ -5,7 +5,7 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        def rev(s):
+        def compare(s):
             st=[]
             for i in s:
                 if i=="#" and st:
@@ -14,4 +14,4 @@ class Solution(object):
                     st.append(i)
             return st
 
-        return (rev(s)==rev(t))
+        return (compare(s)==compare(t))
