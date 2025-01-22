@@ -8,9 +8,7 @@ class Solution:
                 return mid
             elif target<nums[mid]:
                 high=mid-1
-                mid=mid-1
             else:
                 low=mid+1
-                mid=mid+1
-        return mid
+        return low
     
