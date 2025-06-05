@@ -1,18 +1,22 @@
 class Solution:
     def myAtoi(self, s: str) -> int:
         res = 0
-        i=0
+        isStart=True
         sign = 1
-        while i<len(s) and s[i]==" ":
-            i+=1
-            
-        if i<len(s) and (s[i]=='-' or s[i]=="+"):
-            sign=-1 if s[i]=='-' else 1
-            i+=1
-
-        while i<len(s) and s[i].isdigit():
-            res=res*10+ ord(s[i])- ord('0')
-            i+=1
+        for i in s:
+            if i==" " and isStart:
+                continue
+            elif i=='-' and isStart:
+                sign=-1
+                isStart=False
+            elif i=='+' and isStart:
+                sign=1
+                isStart=False
+            elif '0'<=i<='9':
+                res=res*10+ ord(i)-ord('0')
+                isStart=False
+            else:
+                break
 
         result=sign*res
 
